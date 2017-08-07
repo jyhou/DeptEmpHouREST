@@ -54,6 +54,5 @@ public class DeptController {
 	public List<Department> getDeptDetail() {
 		return deptService.loadDeptDetails();
 	}
-//	@RequestMapping(value="/ge")
 
 }

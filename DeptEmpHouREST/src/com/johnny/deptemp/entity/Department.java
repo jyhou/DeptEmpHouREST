@@ -13,6 +13,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(name="department")
@@ -31,10 +32,11 @@ public class Department implements Serializable{
 	@Column(name="dept_email", length=150)
 	private String deptEmail;
 	
-//	@OneToMany(mappedBy="empDept",fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="empDept",fetch=FetchType.EAGER)
 //	@OneToMany(mappedBy="empDept",fetch=FetchType.LAZY)
-	@OneToMany(mappedBy="empDept")
-	@JsonIgnore //affects the REST response as if there is no getter for deptEmpList
+//	@OneToMany(mappedBy="empDept")
+//	@JsonIgnore //affects the REST response as if there is no getter for deptEmpList
+	@JsonManagedReference
 	private List<Employee> deptEmpList;
 	
 	public Department(){};

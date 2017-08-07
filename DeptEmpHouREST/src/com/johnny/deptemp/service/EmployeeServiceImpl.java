@@ -39,14 +39,12 @@ public class EmployeeServiceImpl implements EmployeeService{
 
 	@Override
 	public List<Employee> loadEmpDetails() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Employee loadEmpBasicInfoById(Integer empId) {
-		// TODO Auto-generated method stub
-		return null;
+	public Employee loadEmpBasicInfoById(Integer empId) {		
+		return empDAO.findBasicEmpInfoById(empId);
 	}
 
 }
