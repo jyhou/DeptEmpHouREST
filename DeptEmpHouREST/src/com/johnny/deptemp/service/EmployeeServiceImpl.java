@@ -46,5 +46,10 @@ public class EmployeeServiceImpl implements EmployeeService{
 	public Employee loadEmpBasicInfoById(Integer empId) {		
 		return empDAO.findBasicEmpInfoById(empId);
 	}
+	
+	@Override
+	public List<String> getEmpNames() {
+		return empDAO.findEmpNames();
+	}
 
 }

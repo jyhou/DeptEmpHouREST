@@ -9,4 +9,6 @@ public interface DepartmentService {
 	public List<Department> loadDeptDetails();
 	public List<Department> loadDeptBasicInfo();
 	public Department loadDeptBasicInfoById(Integer deptId);
+	public List<String> loadDeptWithEmpNames();
+	public void insertDept(Department dept);
 }

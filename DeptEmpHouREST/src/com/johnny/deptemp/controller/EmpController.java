@@ -56,4 +56,10 @@ public class EmpController {
 		return empService.loadEmpBasicInfoById(empId);
 	}
 	
+	@RequestMapping(value="/empNames",method=RequestMethod.GET)
+	@ResponseBody
+	public List<String> getEmpNames() {
+		return empService.getEmpNames();
+	}
+	
 }

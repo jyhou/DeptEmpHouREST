@@ -45,5 +45,21 @@ public class DepartmentDAOImpl implements DepartmentDAO{
 	public Department findBasicDeptInfoById(Integer deptId) {
 		return em.find(Department.class, deptId);
 	}
+	
+	@Override
+	public List<String> findDeptWithEmpNames() {
+		String queryString = "SELECT d.deptId, d.deptName, el.firstName, el.lastName " + 
+								"FROM Department d " 
+								+ "LEFT JOIN d.deptEmpList el";
+		Query query = em.createQuery(queryString);
+		return query.getResultList();
+	}
+	
+	@Override
+	public void insert(Department d) {
+		String queryString = "INSERT INTO Department d " + 
+					"(dept_id, dept_name, dept_email) VALUES (?, ?, ?) ";
+		
+	}
 
 }

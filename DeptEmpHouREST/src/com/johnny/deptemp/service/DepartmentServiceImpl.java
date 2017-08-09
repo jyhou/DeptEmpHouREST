@@ -52,4 +52,14 @@ public class DepartmentServiceImpl implements DepartmentService{
 		return deptDAO.findBasicDeptInfoById(deptId);
 	}
 	
+	@Override
+	public List<String> loadDeptWithEmpNames() {
+		return deptDAO.findDeptWithEmpNames();
+	}
+	
+	@Override
+	public void insertDept(Department dept) {
+		deptDAO.insert(dept);
+	}
+	
 }

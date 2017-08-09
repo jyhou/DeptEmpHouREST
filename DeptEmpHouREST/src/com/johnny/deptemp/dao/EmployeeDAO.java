@@ -9,4 +9,5 @@ public interface EmployeeDAO {
 	List<Employee> findBasicEmpInfo();
 	List<Employee> findEmpDetails();
 	Employee findBasicEmpInfoById(Integer empId);
+	List<String> findEmpNames();
 }

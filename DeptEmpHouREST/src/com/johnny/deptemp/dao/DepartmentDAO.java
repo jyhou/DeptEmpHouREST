@@ -10,5 +10,7 @@ public interface DepartmentDAO {
 	List<Department> findDeptDetails();
 	List<Department> findBasicDeptInfo();
 	Department findBasicDeptInfoById(Integer deptId);
+	List<String> findDeptWithEmpNames();
+	void insert(Department dept);
 
 }

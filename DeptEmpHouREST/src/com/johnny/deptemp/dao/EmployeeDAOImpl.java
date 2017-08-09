@@ -39,5 +39,15 @@ public class EmployeeDAOImpl implements EmployeeDAO{
 	public Employee findBasicEmpInfoById(Integer empId) {
 		return em.find(Employee.class, empId);
 	}
+	
+	@Override
+	public List<String> findEmpNames() {
+		/* concatenation is not supported by JPQL 
+		String queryString = "SELECT 'Mr. ' || e.firstName || ' ' || e.lastName " + "FROM Employee e";
+		*/
+		String queryString = "SELECT e.firstName, e.lastName " + "FROM Employee e";
+		Query query = em.createQuery(queryString);
+		return query.getResultList();
+	}
 
 }

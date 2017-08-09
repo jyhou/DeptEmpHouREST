@@ -54,5 +54,17 @@ public class DeptController {
 	public List<Department> getDeptDetail() {
 		return deptService.loadDeptDetails();
 	}
+	
+	@RequestMapping(value="/deptWithEmpNames",method=RequestMethod.GET)
+	@ResponseBody
+	public List<String> getDeptWithEmpNames() {
+		return deptService.loadDeptWithEmpNames();
+	}
+	
+	@RequestMapping(value="/dept/add/{deptId}",method=RequestMethod.POST)
+	@ResponseBody
+	public void addDept(@PathVariable(value="deptId") Integer deptId, Department dept) {
+		deptService.insertDept(dept);
+	}
 
 }
